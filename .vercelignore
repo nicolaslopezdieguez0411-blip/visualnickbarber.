@@ -1,0 +1,4 @@
+tsconfig.json
+next-env.d.ts
+*.ts
+*.tsx
