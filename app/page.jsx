@@ -1,3 +1,18 @@
+import "./globals.css";
+
+export const metadata = {
+  title: "VisualNickBarber — Madrid",
+  description: "Precisión visual en cada corte. Degradados limpios, acabado profesional.",
+  openGraph: { title: "VisualNickBarber — Madrid", images: ["/og.png"] },
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="es">
+      <body>{children}</body>
+    </html>
+  );
+}
 const whatsappLink = "https://wa.me/34613143562?text=Hola%20VisualNckBarber%2C%20quiero%20reservar%20un%20corte%20%F0%9F%92%88";
 const instagramLink = "https://instagram.com/visualnick.barber";
 
