@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom tweaks */
+/* Custom */
 :root { color-scheme: dark; }
-html, body { background: #000; color: #fff; }
+html, body { background:#000; color:#fff; }
