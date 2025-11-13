@@ -14,31 +14,7 @@ export default function Page() {
           <a href={instagramLink} target="_blank" className="rounded-2xl px-5 py-3 border border-zinc-700 hover:border-zinc-500 transition">Instagram</a>
         </div>
       </section>
-{/* SECCIONES PRINCIPALES */}
-<section className="max-w-3xl mx-auto px-6 py-20 text-center space-y-6">
-  <h2 className="text-3xl font-bold mb-10">Explora</h2>
 
-  <a
-    href="/about"
-    className="block rounded-2xl border border-zinc-700 py-4 text-white font-semibold hover:bg-zinc-900 transition"
-  >
-    Sobre mí
-  </a>
-
-  <a
-    href="/gallery"
-    className="block rounded-2xl border border-zinc-700 py-4 text-white font-semibold hover:bg-zinc-900 transition"
-  >
-    Galería
-  </a>
-
-  <a
-    href="/reviews"
-    className="block rounded-2xl border border-zinc-700 py-4 text-white font-semibold hover:bg-zinc-900 transition"
-  >
-    Reseñas
-  </a>
-</section>
 
       {/* SERVICIOS */}
       <section className="max-w-5xl mx-auto px-6 pb-12">
