@@ -66,7 +66,7 @@ export default function Page() {
           </div>
         </section>
 
-        {/* SECCIONES PRINCIPALES (BOTONES DORADOS ARRIBA YA LOS LLEVA EL NAVBAR) */}
+        {/* BLOQUE EXPLORA */}
         <section className="max-w-3xl mx-auto px-6 py-12 text-center space-y-4">
           <h2 className="text-2xl font-bold mb-6">Explora</h2>
 
@@ -81,14 +81,12 @@ export default function Page() {
           >
             Sobre mí
           </a>
-
           <a
             href="/gallery"
             className="block rounded-2xl border border-zinc-700 py-3 text-white font-semibold hover:bg-zinc-900 transition"
           >
             Galería
           </a>
-
           <a
             href="/reviews"
             className="block rounded-2xl border border-zinc-700 py-3 text-white font-semibold hover:bg-zinc-900 transition"
@@ -120,7 +118,7 @@ export default function Page() {
             <img
               src="/qr-whatsapp.png"
               alt="QR WhatsApp VisualNickBarber"
-              className="w-32 h-32 rounded-xl border border-zinc-700"
+            className="w-32 h-32 rounded-xl border border-zinc-700"
             />
           </div>
         </section>
@@ -151,8 +149,5 @@ export default function Page() {
         </div>
       </footer>
     </>
-  );
-}
-
   );
 }
