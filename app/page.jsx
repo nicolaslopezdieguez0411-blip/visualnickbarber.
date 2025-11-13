@@ -13,9 +13,7 @@ export default function Page() {
           <a href={whatsappLink} className="rounded-2xl px-5 py-3 bg-white text-black font-semibold hover:opacity-90 transition">WhatsApp</a>
           <a href={instagramLink} target="_blank" className="rounded-2xl px-5 py-3 border border-zinc-700 hover:border-zinc-500 transition">Instagram</a>
         </div>
-      </section>
-
-
+    
       {/* SERVICIOS */}
       <section className="max-w-5xl mx-auto px-6 pb-12">
         <h2 className="text-2xl font-bold">Servicios & Precios</h2>
