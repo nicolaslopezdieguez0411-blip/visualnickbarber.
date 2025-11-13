@@ -1,0 +1,10 @@
+{/* SOBRE MÍ */}
+<section className="max-w-3xl mx-auto px-6 py-16 text-center">
+  <h2 className="text-3xl font-bold mb-4">Sobre mí</h2>
+  <p className="text-zinc-400 leading-relaxed">
+    Soy <span className="text-white font-semibold">Nicolás López</span>, fundador de VisualNickBarber. 
+    Barber en formación constante, especializado en fades limpios y detalle estético. 
+    Mi visión es que cada cliente salga con una versión más segura, más pulida y más visual de sí mismo.
+    Trabajo con precisión, estilo y dedicación.
+  </p>
+</section>
