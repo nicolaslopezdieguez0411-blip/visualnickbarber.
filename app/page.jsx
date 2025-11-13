@@ -14,7 +14,39 @@ export default function Page() {
           <a href={instagramLink} target="_blank" className="rounded-2xl px-5 py-3 border border-zinc-700 hover:border-zinc-500 transition">Instagram</a>
         </div>
       </section>
+{/* SOBRE MÍ */}
+<section className="max-w-3xl mx-auto px-6 py-16 text-center">
+  <h2 className="text-3xl font-bold mb-4">Sobre mí</h2>
+  <p className="text-zinc-400 leading-relaxed">
+    Soy <span className="text-white font-semibold">Nicolás López</span>, fundador de VisualNickBarber. 
+    Barber en formación constante, especializado en fades limpios y detalle estético. 
+    Mi visión es que cada cliente salga con una versión más segura, más pulida y más visual de sí mismo.
+    Trabajo con precisión, estilo y dedicación.
+  </p>
+</section>
+{/* GALERÍA — VÍDEO MARCO DORADO */}
+<section className="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h2 className="text-3xl font-bold mb-10">Galería</h2>
 
+  <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden border border-[#c9a646]/40 shadow-[0_0_25px_rgba(201,166,70,0.25)]">
+    
+    {/* Marco dorado */}
+    <div className="absolute inset-0 border-2 border-[#c9a646]/40 rounded-2xl pointer-events-none"></div>
+
+    <video
+      src="/gallery/cut1.mp4"
+      className="w-full rounded-2xl"
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
+  </div>
+
+  <p className="text-zinc-500 mt-6">
+    Próximamente más resultados. Los 10 primeros cortes GRATIS 💈
+  </p>
+</section>
       {/* SERVICIOS */}
       <section className="max-w-5xl mx-auto px-6 pb-12">
         <h2 className="text-2xl font-bold">Servicios & Precios</h2>
