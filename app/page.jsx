@@ -40,6 +40,7 @@ export default function Page() {
           </div>
         </section>
 
+        
         {/* SERVICIOS / PRECIOS */}
         <section className="max-w-5xl mx-auto px-6 pb-12">
           <h2 className="text-2xl font-bold mb-4">Servicios & Precios</h2>
