@@ -2,6 +2,7 @@ const whatsappLink =
   "https://wa.me/34613143562?text=Hola%20VisualNickBarber%2C%20quiero%20reservar%20un%20corte%20%F0%9F%92%88";
 const instagramLink = "https://instagram.com/visualnick.barber";
 
+
 export default function Page() {
   return (
     <>
