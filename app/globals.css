@@ -5,3 +5,12 @@
 /* Custom */
 :root { color-scheme: dark; }
 html, body { background:#000; color:#fff; }
+/* Hover premium global para botones y enlaces */
+a, button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a:hover, button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
