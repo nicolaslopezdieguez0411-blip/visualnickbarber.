@@ -16,7 +16,7 @@ const services = [
     description: "Degradado preciso, líneas limpias y acabado a tijera.",
     price: "10 €",
     whatsappText:
-      "Hola VisualNick, me gustaría reservar un corte + fade limpio. ¿Tienes algún hueco?"
+      "Hola VisualNick, me gustaría reservar un corte + fade limpio. ¿Tienes algún hueco?",
   },
   {
     id: "barba-perfilado",
@@ -24,7 +24,7 @@ const services = [
     description: "Máquina y navaja, contornos limpios y visual marcadito.",
     price: "5 €",
     whatsappText:
-      "Hola VisualNick, me gustaría reservar barba + perfilado. ¿Cuándo podría ir?"
+      "Hola VisualNick, me gustaría reservar barba + perfilado. ¿Cuándo podría ir?",
   },
   {
     id: "cejas",
@@ -32,9 +32,114 @@ const services = [
     description: "Definición limpia, natural, sin pasarse.",
     price: "3 €",
     whatsappText:
-      "Hola VisualNick, me gustaría arreglarme las cejas / detalles. ¿Qué horario tienes disponible?"
-  }
+      "Hola VisualNick, me gustaría arreglarme las cejas / detalles. ¿Qué horario tienes disponible?",
+  },
 ];
+
+// FOOTER
+const Footer = () => {
+  return (
+    <footer className="border-t border-zinc-800 mt-16">
+      <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col gap-10 md:flex-row md:justify-between md:items-start text-sm text-zinc-400">
+        {/* Columna 1: Marca + copyright */}
+        <div className="space-y-2">
+          <p className="text-zinc-100 font-semibold text-base">
+            VisualNickBarber
+          </p>
+          <p>Copyright © 2025 VisualNickBarber</p>
+          <p className="text-xs text-zinc-500">
+            Fades limpios, estética y detalle. ✂️
+          </p>
+        </div>
+
+        {/* Columna 2: Contacto + iconos */}
+        <div>
+          <h3 className="text-zinc-100 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+            Contacto
+          </h3>
+          <div className="flex flex-col gap-3">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 hover:border-zinc-400 hover:bg-zinc-900 transition"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/40 text-xs">
+                🟢
+              </span>
+              <div className="flex flex-col">
+                <span className="text-zinc-100 text-xs font-medium">
+                  WhatsApp
+                </span>
+                <span className="text-[11px] text-zinc-500">
+                  Reserva tu corte por mensaje
+                </span>
+              </div>
+            </a>
+
+            <a
+              href={instagramLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 hover:border-zinc-400 hover:bg-zinc-900 transition"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-fuchsia-500/10 border border-fuchsia-500/40 text-xs">
+                📷
+              </span>
+              <div className="flex flex-col">
+                <span className="text-zinc-100 text-xs font-medium">
+                  Instagram
+                </span>
+                <span className="text-[11px] text-zinc-500">
+                  @visualnick.barber
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        {/* Columna 3: Horario + localización */}
+        <div>
+          <h3 className="text-zinc-100 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+            Horario
+          </h3>
+          <p className="text-sm">
+            Lunes - Viernes:{" "}
+            <span className="text-zinc-100">16:00 – 20:30</span>
+          </p>
+          <p className="text-sm">
+            Sábados: <span className="text-zinc-100">Bajo reserva</span>
+          </p>
+
+          <h3 className="text-zinc-100 text-xs font-semibold uppercase tracking-[0.25em] mt-5 mb-2">
+            Localización
+          </h3>
+          <p className="text-sm">
+            Madrid — Zona a domicilio / punto acordado.
+          </p>
+        </div>
+
+        {/* Columna 4: Enlaces a secciones */}
+        <div>
+          <h3 className="text-zinc-100 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+            Navegación
+          </h3>
+          <nav className="flex flex-col gap-2 text-sm">
+            <a href="#servicios" className="hover:text-zinc-100 transition">
+              Servicios
+            </a>
+            <a href="#galeria" className="hover:text-zinc-100 transition">
+              Galería
+            </a>
+            <a href="#reservar" className="hover:text-zinc-100 transition">
+              Reservar
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default function Page() {
   // estado de reseñas
@@ -85,7 +190,7 @@ export default function Page() {
       const res = await fetch("/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, service, text })
+        body: JSON.stringify({ name, service, text }),
       });
 
       if (!res.ok) {
@@ -108,7 +213,6 @@ export default function Page() {
     }
   };
 
-  // cuando el usuario pulsa "Sí" o "No"
   const handleClickUseful = (reviewId, isUseful) => {
     setFeedbackReviewId(reviewId);
     setFeedbackIsUseful(isUseful);
@@ -127,8 +231,8 @@ export default function Page() {
         body: JSON.stringify({
           reviewId: feedbackReviewId,
           isUseful: feedbackIsUseful,
-          reason: reasonOverride.trim() || feedbackText.trim() || null
-        })
+          reason: reasonOverride.trim() || feedbackText.trim() || null,
+        }),
       });
 
       const data = await res.json().catch(() => null);
@@ -142,7 +246,6 @@ export default function Page() {
         return;
       }
 
-      // Actualizar contadores en el estado local para que se vea al momento
       setReviews((prev) =>
         prev.map((r) => {
           if (r.id !== feedbackReviewId) return r;
@@ -151,7 +254,7 @@ export default function Page() {
           return {
             ...r,
             useful_yes: feedbackIsUseful ? currentYes + 1 : currentYes,
-            useful_no: !feedbackIsUseful ? currentNo + 1 : currentNo
+            useful_no: !feedbackIsUseful ? currentNo + 1 : currentNo,
           };
         })
       );
@@ -211,7 +314,10 @@ export default function Page() {
         </section>
 
         {/* SERVICIOS / PRECIOS */}
-        <section className="max-w-5xl mx-auto px-6 pb-12">
+        <section
+          id="servicios"
+          className="max-w-5xl mx-auto px-6 pb-12"
+        >
           <h2 className="text-2xl font-bold mb-2">Servicios &amp; Precios</h2>
           <p className="text-zinc-400 mb-6">
             Elige lo que quieres hacerte y reserva directo por WhatsApp.
@@ -278,14 +384,16 @@ export default function Page() {
           </div>
         </section>
 
-        {/* RESEÑAS */}
-        <section className="max-w-5xl mx-auto px-6 pb-16">
+        {/* RESEÑAS (GALERÍA SOCIAL) */}
+        <section
+          id="galeria"
+          className="max-w-5xl mx-auto px-6 pb-16"
+        >
           <h2 className="text-2xl font-bold mb-2">Reseñas</h2>
           <p className="text-zinc-400 mb-6">
             Lo que dicen los que ya han pasado por la silla.
           </p>
 
-          {/* LISTADO DE RESEÑAS APROBADAS */}
           {loadingReviews ? (
             <p className="text-zinc-500 text-sm mb-6">Cargando reseñas...</p>
           ) : reviews.length === 0 ? (
@@ -310,7 +418,6 @@ export default function Page() {
                     — {review.name}
                   </div>
 
-                  {/* contador de útil */}
                   {typeof review.useful_yes === "number" &&
                     review.useful_yes > 0 && (
                       <div className="text-[11px] text-zinc-500 mb-2">
@@ -320,7 +427,6 @@ export default function Page() {
                       </div>
                     )}
 
-                  {/* Botones: ¿Te ha resultado útil? */}
                   <div className="mt-1 text-xs text-zinc-500">
                     ¿Te ha resultado útil?
                     <button
@@ -339,7 +445,6 @@ export default function Page() {
                     </button>
                   </div>
 
-                  {/* Bloque de feedback opcional (solo se muestra para la reseña clicada) */}
                   {feedbackReviewId === review.id && (
                     <form
                       onSubmit={handleSubmitFeedback}
@@ -392,7 +497,6 @@ export default function Page() {
             </div>
           )}
 
-          {/* FORMULARIO PARA ENVIAR RESEÑA */}
           <div className="max-w-xl mx-auto bg-neutral-950 border border-zinc-800 rounded-2xl p-6">
             <h3 className="text-lg font-semibold mb-2">Escribe tu reseña</h3>
             <p className="text-sm text-zinc-400 mb-4">
@@ -438,7 +542,7 @@ export default function Page() {
               <button
                 type="submit"
                 disabled={sendingReview}
-                className="w-full rounded-2xl px-4 py-2 bg-white text-black font-semibold hover:opacity-90 transition disabled:opacity-60"
+                className="w-full mt-4 py-3 rounded-xl border border-yellow-500 text-yellow-400 bg-black font-semibold hover:bg-yellow-500/10 hover:shadow-[0_0_10px_rgba(255,215,0,0.4)] transition-all duration-200 disabled:opacity-60"
               >
                 {sendingReview ? "Enviando..." : "Enviar reseña"}
               </button>
@@ -447,7 +551,10 @@ export default function Page() {
         </section>
 
         {/* CONTACTO / QR */}
-        <section className="max-w-3xl mx-auto px-6 py-16 text-center" id="contacto">
+        <section
+          id="reservar"
+          className="max-w-3xl mx-auto px-6 py-16 text-center"
+        >
           <h2 className="text-2xl font-bold mb-6">Contacto</h2>
 
           <a
@@ -467,7 +574,6 @@ export default function Page() {
             Instagram
           </a>
 
-          {/* QR grande */}
           <div className="mt-6 flex justify-center">
             <img
               src="/qr-whatsapp.png"
@@ -476,7 +582,6 @@ export default function Page() {
             />
           </div>
 
-          {/* Botón descargar QR */}
           <div className="flex justify-center mt-4">
             <a
               href="/qr-whatsapp.png"
@@ -489,30 +594,7 @@ export default function Page() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="border-t border-zinc-800">
-        <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-zinc-400">
-          <div>
-            <div className="font-semibold text-white">VisualNickBarber</div>
-            <div>Horario: 16:00–20:30 · Madrid</div>
-          </div>
-          <div className="flex gap-3">
-            <a
-              href={whatsappLink}
-              className="rounded-2xl px-4 py-2 bg-white text-black font-semibold hover:opacity-90 transition"
-            >
-              Reservar
-            </a>
-            <a
-              href={instagramLink}
-              target="_blank"
-              className="rounded-2xl px-4 py-2 border border-zinc-700 hover:border-zinc-500 transition"
-            >
-              Instagram
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
